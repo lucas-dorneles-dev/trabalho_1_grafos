@@ -4,7 +4,7 @@
 
 #include "Aresta.h"
 #include <vector>
-
+#include <bits/stdc++.h>
 class Grafo{
 public: 
     Grafo(int num_vertices);
@@ -22,8 +22,9 @@ public:
 
     bool caminho(int v1, int v2, int marcado[], std::string str_recursiva = "");
 
-    void busca_largura(int v, std::vector<int> pai, std::vector<int> dist);
+    void busca_largura(int v, std::vector<int> &pai, std::vector<int> &dist);
 
+    void nao_recebem_mensagem(int no_origem, int ttl);
 
 
 private:

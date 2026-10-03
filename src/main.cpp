@@ -1,63 +1,28 @@
 #include "Aresta.h"
 #include "Grafo.h"
-#include <iostream>
+#include <bits/stdc++.h>
 
 using namespace std;
 
 int main() {
-    try {
+ios_base::sync_with_stdio(false);
+cin.tie(NULL);
 
-        //EXERCICIO 2
+    int n_nos, c_conexoes, x, y, o_operacao;
+    cin >> n_nos >> c_conexoes;
 
-        Grafo grafo(8);
-        Aresta a1(0, 2);
-        grafo.insere_aresta(a1);
+    Grafo grafo(n_nos);
 
-        Aresta a2(0, 5);
-        grafo.insere_aresta(a2);
-
-        Aresta a3(0, 7);
-        grafo.insere_aresta(a3);
-
-        Aresta a4(1, 7);
-        grafo.insere_aresta(a4);
-
-        Aresta a5(2, 6);
-        grafo.insere_aresta(a5);
-
-        Aresta a6(3, 4);
-        grafo.insere_aresta(a6);
-
-        Aresta a7(3, 5);
-        grafo.insere_aresta(a7);
-
-        Aresta a8(4, 5);
-        grafo.insere_aresta(a8);
-
-        Aresta a9(4, 6);
-        grafo.insere_aresta(a9);
-
-        Aresta a10(4, 7);
-        grafo.insere_aresta(a10);
-
-        grafo.imprime();
-
-        bool existe_caminho = grafo.caminho(0, 7, new int[grafo.num_vertices()]());
-
-        if (existe_caminho) {
-            cout << "Existe caminho entre os vértices\n";
-
-        } else {
-            cout << "Nao existe caminho entre os vértices\n";
-        }
-
-        vector<int> pai(grafo.num_vertices());
-        vector<int> dist(grafo.num_vertices());
-        grafo.busca_largura(0, pai, dist);
-       
+    for (int i = 0; i < c_conexoes; i++) {
+        cin >> x >> y;
+        grafo.insere_aresta(Aresta(x, y));
     }
-    catch (const exception &e) {
-        cerr << "exception: " << e.what() << "\n";
+
+    cin >> o_operacao;
+
+    for (int j = 0; j < o_operacao; j++) {
+        cin >> x >> y;
+        grafo.nao_recebem_mensagem(x, y);
     }
 
     return 0;

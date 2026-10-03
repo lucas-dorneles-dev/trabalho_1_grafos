@@ -150,7 +150,7 @@ bool Grafo::caminho(int v, int w, int marcado[], std::string str_recursiva) {
 }
 
 
-void Grafo::busca_largura(int v, vector<int> pai, vector<int> dist) {
+void Grafo::busca_largura(int v, vector<int> &pai, vector<int> &dist) {
     vector<int> marcado(num_vertices_, 0);
     queue<int> fila;
     marcado[v]=1;
@@ -160,7 +160,6 @@ void Grafo::busca_largura(int v, vector<int> pai, vector<int> dist) {
     while(!fila.empty()){
         int topo = fila.front();
         fila.pop();
-        cout << topo << "\n";
         for(int u = 0; u < num_vertices_; u++){
             if (matriz_adj_[topo][u]!=0)
                 if (marcado[u]==0)
@@ -174,4 +173,18 @@ void Grafo::busca_largura(int v, vector<int> pai, vector<int> dist) {
     }
 }
 
+void Grafo::nao_recebem_mensagem(int no_origem, int ttl) {
+    std::vector<int> pai(num_vertices_, -1);
+    std::vector<int> dist(num_vertices_, -1);
 
+    busca_largura(no_origem, pai, dist);
+
+    std::cout << no_origem << " " << ttl << ":";
+
+    for (int i = 0; i < num_vertices_; i++) {
+        if (dist[i] == -1 || dist[i] > ttl) {
+            std::cout << " " << i;
+        }
+    }
+    std::cout << "\n";
+}
