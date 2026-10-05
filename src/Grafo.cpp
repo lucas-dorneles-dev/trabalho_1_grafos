@@ -186,13 +186,13 @@ void Grafo::busca_largura(int v, vector<int> &pai, vector<int> &dist) {
     }
 }
 
-void Grafo::nao_recebem_mensagem(int no_origem, int ttl) {
+void Grafo::nao_recebem_mensagem(int origem, int ttl) {
     std::vector<int> pai(num_vertices_, -1);
     std::vector<int> dist(num_vertices_, -1);
 
-    busca_largura(no_origem, pai, dist);
+    busca_largura(origem, pai, dist);
 
-    std::cout << no_origem << " " << ttl << ":";
+    std::cout << origem << " " << ttl << ":";
 
     for (int i = 0; i < num_vertices_; i++) {
         if (dist[i] == -1 || dist[i] > ttl) {
