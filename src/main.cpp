@@ -1,12 +1,22 @@
+/*
+ * Trabalho 1 - Time to Live
+ *
+ * GEN505 - Grafos - 2026/2
+ *
+ * Nome: GABRIEL ALAN SCARATTI | LUCAS VITORIO DORNELES ALBUQUERQUE
+ * Matricula: 20250015359 | 20260022301
+ */
+
 #include "Aresta.h"
 #include "Grafo.h"
-#include <bits/stdc++.h>
+#include <cstddef>
+#include <iostream>
 
 using namespace std;
 
 int main() {
-ios_base::sync_with_stdio(false);
-cin.tie(NULL);
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
 
     int n_nos, c_conexoes, x, y, o_operacao;
     cin >> n_nos >> c_conexoes;

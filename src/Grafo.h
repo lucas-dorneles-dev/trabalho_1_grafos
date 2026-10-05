@@ -1,10 +1,20 @@
+/*
+ * Trabalho 1 - Time to Live
+ *
+ * GEN505 - Grafos - 2026/2
+ *
+ * Nome: GABRIEL ALAN SCARATTI | LUCAS VITORIO DORNELES ALBUQUERQUE
+ * Matricula: 20250015359 | 20260022301
+ */
+
 #ifndef GRAFO_H
 
 #define GRAFO_H
 
 #include "Aresta.h"
+#include <string>
 #include <vector>
-#include <bits/stdc++.h>
+
 class Grafo{
 public: 
     Grafo(int num_vertices);
@@ -36,4 +46,3 @@ private:
 
 
 #endif /*GRAFO_H*/
-
